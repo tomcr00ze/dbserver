@@ -12,6 +12,10 @@ public class FileHandler {
     public FileHandler(final String dbFileName) throws FileNotFoundException { //method for opening db file
         this.dbFile = new RandomAccessFile(dbFileName, "rw"); //rw: read, write
     }
+    public boolean add(String name, int age, String address, String carPlateNumber, String description) throws IOException {
+        this.dbFile.seek(this.dbFile.length());
+    }
+
     public void close() throws IOException { //for closing DB file
         this.dbFile.close();
     }
